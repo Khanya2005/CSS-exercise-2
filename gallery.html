@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>My Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>My Gallery</h1>
+
+
+<!-- Buttons -->
+
+
+<div class="buttons">
+
+   <button class="active" onclick="show('all', this)">All</button>
+
+   <button onclick="show('landscape', this)">Landscapes</button>
+
+   <button onclick="show('portrait', this)">Portraits</button>
+
+   <button onclick="show('architecture', this)">Architecture</button>
+
+</div>
+
+
+<!-- All pictures -->
+
+
+<div class="gallery">
+
+
+<div class="card" data-type="landscape">
+
+     <img src="https://picsum.photos/400/300?random=11">
+
+     <h2>Mountain Valley</h2>
+
+     <p class="tag">Landscape</p>
+
+     <p class="overlay">Golden light over a mountain valley.</p>
+
+</div>
+
+
+<div class="card" data-type="landscape">
+
+   <img src="https://picsum.photos/400/300?random=12">
+
+   <h2>Ocean Coast</h2>
+
+   <p class="tag">Landscape</p>
+
+   <p class="overlay">Waves on a rocky coast.</p>
+
+</div>
+
+
+    <div class="card" data-type="landscape">
+
+    <img src="https://picsum.photos/400/300?random=13">
+
+    <h2>Green Forest</h2>
+
+    <p class="tag">Landscape</p>
+
+    <p class="overlay">Sunlight through green trees.</p>
+
+</div>
+
+
+  <div class="card" data-type="landscape">
+
+  <img src="https://picsum.photos/400/300?random=14">
+
+     <h2>Desert Dunes</h2>
+
+     <p class="tag">Landscape</p>
+
+     <p class="overlay">Soft sand dunes.</p>
+
+</div>
+
+
+  <div class="card" data-type="portrait">
+
+    <img src="https://picsum.photos/400/300?random=21">
+
+    <h2>Portrait of Aya</h2>
+
+    <p class="tag">Portrait</p>
+
+    <p class="overlay">A warm portrait.</p>
+
+</div>
+
+
+<div class="card" data-type="portrait">
+
+  <img src="https://picsum.photos/400/300?random=22">
+
+  <h2>Street Portrait</h2>
+
+  <p class="tag">Portrait</p>
+
+  <p class="overlay">A portrait on the street.</p>
+
+</div>
+
+
+  <div class="card" data-type="portrait">
+
+    <img src="https://picsum.photos/400/300?random=23">
+
+    <h2>Studio Portrait</h2>
+
+    <p class="tag">Portrait</p>
+
+    <p class="overlay">A studio portrait.</p>
+
+   </div>
+
+
+  <div class="card" data-type="portrait">
+
+  <img src="https://picsum.photos/400/300?random=24">
+
+  <h2>Golden Hour</h2>
+
+  <p class="tag">Portrait</p>
+
+  <p class="overlay">Warm golden light.</p>
+
+ </div>
+
+
+  <div class="card" data-type="architecture">
+
+   <img src="https://picsum.photos/400/300?random=31">
+
+   <h2>Modern Building</h2>
+
+   <p class="tag">Architecture</p>
+
+   <p class="overlay">A modern glass building.</p>
+
+</div>
+
+
+<div class="card" data-type="architecture">
+
+   <img src="https://picsum.photos/400/300?random=32">
+
+   <h2>Old Town</h2>
+
+   <p class="tag">Architecture</p>
+
+   <p class="overlay">Old stone buildings.</p>
+
+</div>
+
+
+<div class="card" data-type="architecture">
+
+   <img src="https://picsum.photos/400/300?random=33">
+
+   <h2>City Bridge</h2>
+
+   <p class="tag">Architecture</p>
+
+   <p class="overlay">A steel bridge.</p>
+
+</div>
+
+
+<div class="card" data-type="architecture">
+
+    <img src="https://picsum.photos/400/300?random=34">
+
+    <h2>Church Tower</h2>
+
+    <p class="tag">Architecture</p>
+
+    <p class="overlay">A tall church tower.</p>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function show(type, btn) {
+
+// make clicked button black
+
+
+  let allBtns = document.querySelectorAll('.buttons button');
+
+  allBtns.forEach(b => b.classList.remove('active'));
+
+  btn.classList.add('active');
+
+
+// show only that type
+
+
+let cards = document.querySelectorAll('.card');
+
+cards.forEach(c => {
+
+     if (type === 'all' || c.getAttribute('data-type') === type) {
+
+     c.classList.remove('hide');
+
+} else {
+
+c.classList.add('hide');
+
+}
+
+});
+
+}
+
+</script>
+
+
+</body>
+</html>
